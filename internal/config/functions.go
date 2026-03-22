@@ -62,30 +62,3 @@ func (cfg *Config) SetUser(user string) error {
 	cfg.CurrentUserName = user
 	return write(*cfg)
 }
-
-func HandlerLogin(s *State, cmd Command) error {
-	if len(cmd.Args) == 0 {
-		return fmt.Errorf("Command is empty")
-	}
-	if err := s.Cfg.SetUser(cmd.Args[0]); err != nil {
-		return err
-	}
-	fmt.Println("User has been set")
-	return nil
-}
-
-func (c *Commands) Run(s *State, cmd Command) error {
-	if len(cmd.Args) == 0 {
-		return fmt.Errorf("Command is empty")
-	}
-	val, ok := c.RegisteredCommand[cmd.Name]
-	if ok {
-		return val(s, cmd)
-	} else {
-		return fmt.Errorf("Command does not exist")
-	}
-}
-
-func (c *Commands) Register(name string, f func(s *State, cmd Command) error) {
-	c.RegisteredCommand[name] = f
-}
