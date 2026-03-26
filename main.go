@@ -32,19 +32,20 @@ func main() {
 	}
 
 	cmds.Register("login", HandlerLogin)
-	if len(os.Args) < 2 {
-		fmt.Println("Missing arguments. Exiting program...")
-		os.Exit(1)
-	}
 	cmds.Register("register", HandlerRegister)
-	if len(os.Args) < 2 {
-		fmt.Println("Missing arguments. Exiting program...")
-		os.Exit(1)
-	}
 	cmds.Register("reset", HandlerReset)
 	cmds.Register("users", HandlerGetUsers)
 	cmds.Register("agg", agg)
-
+	cmds.Register("addfeed", middlewareLoggedIn(addfeed))
+	cmds.Register("feeds", feeds)
+	cmds.Register("follow", middlewareLoggedIn(follow))
+	cmds.Register("following", middlewareLoggedIn(following))
+	cmds.Register("unfollow", middlewareLoggedIn(unfollow))
+	cmds.Register("browse", middlewareLoggedIn(browse))
+	if len(os.Args) < 2 {
+		fmt.Println("Usage: cli <command> [args...]")
+		os.Exit(1)
+	}
 	cmdName := os.Args[1]
 	cmdArgs := os.Args[2:]
 
