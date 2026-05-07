@@ -60,6 +60,6 @@ Other commands:
 - `gator unfollow <url>` - Unfollow a feed
 - `gator reset` - Reset the database to the clean slate
 
-## Thoughts on the project
+## Motivation
 
 Overall I learn a whole bunch of new things from this project. It was indeed the most demanding project that I have experienced so far, and I had to utilize Boot AI for quite a bit during the journey. However, I gained solid knowledge of building my own database, and query into it to get the right data. I still need to learn much more in terms of organizing my code, but I am really excited and pumped after this chapter. 
