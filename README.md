@@ -7,7 +7,7 @@ Another project from the incredible Boot.dev backend course. This CLI tool helps
 - [Go](https://golang.org/dl/)
 - [PostgreSQL](https://www.postgresql.org/download)
 
-## Installation
+## Quick Start
 
 ```bash
 go install github.com/your-username/gator@latest
@@ -59,6 +59,10 @@ Other commands:
 - `gator follow <url>` - Follow an existing feed
 - `gator unfollow <url>` - Unfollow a feed
 - `gator reset` - Reset the database to the clean slate
+
+## Contributing
+
+If you'd like to contribute, please fork the repository and open a pull request to the `main` branch.
 
 ## Motivation
 
